@@ -4,7 +4,6 @@ $user = 'root';
 $pass = '';
 $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-
 );
 try {
     $db_connection = new PDO($dsn, $user, $pass, $options);
@@ -12,5 +11,5 @@ try {
     $db_connection->prepare($sql)->execute();
     echo 'Connect & Insert Successfully ^_^';
 } catch (PDOException $e) {
-    echo 'Failed to connect => ' . $e->getCode() . ' : ' . $e->getMessage();
+    echo 'Failed To Connect => Error Code: ' . $e->getCode() . '  Error Message: ' . $e->getMessage();
 }
